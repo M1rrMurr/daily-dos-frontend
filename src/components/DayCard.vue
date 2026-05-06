@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Activity } from '@/types/Activity';
 import { formatDate } from '@/utils/formatDate';
-
+import DayCardRow from './DayCardRow.vue';
 const props = defineProps<{ day: string, activities: Activity[] }>()
 
 
@@ -16,18 +16,9 @@ const props = defineProps<{ day: string, activities: Activity[] }>()
         </h2>
         <div
             class="h-full py-2 flex flex-col bg-[linear-gradient(to_right,theme(colors.black)_66%,theme(colors.slate.900)_33%)]">
-            <div v-if="activities.length" v-for="activity in activities" :key="activity.id"
-                class="flex hover:scale-110 transition-all duration-150">
-                <div class=" px-1 flex-2 flex items-center justify-center font-indie font-semibold text-sm ">
-                    {{ formatDate(activity.start_time) }} -
-                    {{ formatDate(activity.end_time) }}
-                </div>
-
-                <div class="flex-1 text-center ">
-                    {{ activity.name }}
-                </div>
-            </div>
+            <DayCardRow v-if="activities.length" v-for="activity in activities" :key="activity.id" :activity>
+            </DayCardRow>
         </div>
     </div>
 
-</template>Time
+</template>

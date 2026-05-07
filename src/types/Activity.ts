@@ -1,7 +1,7 @@
 import type { Tag } from './Tag.ts'
 
 export type Activity = {
-    id: string
+    id: number
     name: string
     description: string
     priority: boolean

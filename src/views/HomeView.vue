@@ -2,15 +2,15 @@
 import { login } from '@/services/authService'
 import { ref } from 'vue'
 
-
 import PrimaryButton from '@/components/PrimaryButton.vue'
+import { useActivityStore } from '@/stores/activity'
 
 
 const email = ref('zsoli@gmail.com')
 const password = ref('password')
 const isLoading = ref(false)
 
-
+const store = useActivityStore()
 </script>
 
 <template>
@@ -22,4 +22,5 @@ const isLoading = ref(false)
         <PrimaryButton @click="login(isLoading, { email, password })">login</PrimaryButton>
 
     </form>
+    <PrimaryButton @click="store.getActivity()">lol</PrimaryButton>
 </template>

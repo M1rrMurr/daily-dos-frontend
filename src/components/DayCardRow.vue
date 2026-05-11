@@ -19,8 +19,8 @@ const isHovered = ref(false)
 
 <template>
     <div @mouseover="isHovered = true" @mouseleave="isHovered = false"
-        class="relative flex hover:-translate-x-4 transition-all duration-200 cursor-default">
-        <div class=" px-1 my-1 flex-2 flex items-center justify-center font-indie font-semibold text-sm ">
+        class="relative py-1 flex hover:-translate-x-4 transition-all duration-200 cursor-default">
+        <div class="  my-1 flex-2 flex items-center justify-center font-indie font-semibold text-sm ">
             {{ formatDate(activity.start_time) }} -
             {{ formatDate(activity.end_time) }}
         </div>
@@ -39,5 +39,6 @@ const isHovered = ref(false)
             </IconButton>
 
         </div>
+
     </div>
 </template>

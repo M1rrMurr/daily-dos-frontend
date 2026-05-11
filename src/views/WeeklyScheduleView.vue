@@ -13,7 +13,7 @@ const days = ['Monday', 'Thuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
 
 <template>
     <h1 class="text-4xl font-bold font-indie text-slate-100">Weekly Scheadule</h1>
-    <div class="flex gap-6 pb-3 flex-wrap justify-between">
+    <div class="flex gap-10 pb-3 flex-wrap justify-between">
         <DayCard v-for="day, i in days" :day :id="i" :activities="store.sortByDay(i + 1) ?? []"></DayCard>
     </div>
 </template>

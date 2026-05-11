@@ -12,8 +12,13 @@ export async function fetchActivity(id: number): Promise<Activity> {
     const response = await apiClient.get<ApiResponse<Activity>>(`api/activity/${id}`)
     return response.data.data
 }
+type MessageWithData = { message: string; data: Activity }
+export async function storeActivity(data: Activity): Promise<MessageWithData> {
+    const response = await apiClient.post<MessageWithData>('api/activity', data)
+    return response.data
+}
 
-export async function deleteActivity(id: number): Promise<ApiResponse<Message>> {
-    const response = await apiClient.delete<ApiResponse<Message>>(`api/activity/${id}`)
+export async function deleteActivity(id: number): Promise<Message> {
+    const response = await apiClient.delete<Message>(`api/activity/${id}`)
     return response.data
 }

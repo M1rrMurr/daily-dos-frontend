@@ -8,7 +8,7 @@ export const useUiStore = defineStore('uiStore', () => {
     const modalType = ref<ContentType>(null)
     const modalContent = ref()
 
-    const openModal = function(type: ContentType, payLoad: any) {
+    const openModal = function(type: ContentType, payLoad?: any) {
         modalType.value = type
         modalContent.value = payLoad
     }

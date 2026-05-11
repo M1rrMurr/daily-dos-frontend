@@ -23,4 +23,6 @@ const store = useActivityStore()
 
     </form>
     <PrimaryButton @click="store.getActivity()">lol</PrimaryButton>
+
+    <PrimaryButton @click="store.createActivity()">create</PrimaryButton>
 </template>

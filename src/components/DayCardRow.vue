@@ -18,17 +18,22 @@ const isHovered = ref(false)
 </script>
 
 <template>
-    <div @mouseover="isHovered = true" @mouseleave="isHovered = false"
-        class="relative py-1 flex hover:-translate-x-4 transition-all duration-200 cursor-default">
-        <div class="  my-1 flex-2 flex items-center justify-center font-indie font-semibold text-sm ">
-            {{ formatDate(activity.start_time) }} -
-            {{ formatDate(activity.end_time) }}
+    <div @mouseover="isHovered = true" @mouseleave="isHovered = false" class="flex group relative font-indie  ">
+        <!--dates bg-->
+        <div class="flex-2/5 bg-black flex items-center justify-center font-semibold py-1">
+            <div
+                class="flex gap-2 text-sm items-center justify-center group-hover:-translate-x-3 transition-all duration-200">
+                {{ formatDate(activity.start_time) }} -
+                {{ formatDate(activity.end_time) }}
+            </div>
         </div>
-
-        <div class="flex-1 text-center ">
-            {{ activity.name }}
+        <!--name-->
+        <div class="flex-1  bg-slate-900 py-1">
+            <div class="flex items-center justify-center transition-all duration-200 group-hover:-translate-x-3">
+                {{ activity.name }}
+            </div>
         </div>
-        <!-- dropdown container for the row -->
+        <!-- edit/delete container for the row -->
         <div v-if="isHovered"
             class="absolute bg-black space-y-2  text-slate-400 hover:px-1 hover:py-2 transition-all duration-200  bottom-2 -right-4 border-2 border-slate-500">
             <IconButton @click="uiStore.openModal('activity', activity)">
@@ -39,6 +44,5 @@ const isHovered = ref(false)
             </IconButton>
 
         </div>
-
     </div>
 </template>

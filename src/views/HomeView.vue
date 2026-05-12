@@ -25,4 +25,5 @@ const store = useActivityStore()
     <PrimaryButton @click="store.getActivity()">lol</PrimaryButton>
 
     <PrimaryButton @click="store.createActivity()">create</PrimaryButton>
+
 </template>

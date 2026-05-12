@@ -13,8 +13,18 @@ const uiStore = useUiStore()
 </script>
 
 <template>
-    <div class="w-96">
-        <h2 class="text-2xl font-bold mb-3">{{ day }}</h2>
-        <DayCardRow v-for="activity in activities" :activity />
+    <div class="w-96 min-h-72 bg-black">
+        <h2 class="bg-slate-950 text-2xl font-bold pb-3">{{ day }}</h2>
+        <div class="flex flex-col justify-between bg-black min-h-full ">
+            <div class="">
+                <DayCardRow v-for="activity in activities" :activity />
+            </div>
+            <div class="flex justify-end px-1 py-1">
+                <IconButton @click="uiStore.openModal('activity')">
+                    <IconPlus />
+                </IconButton>
+            </div>
+
+        </div>
     </div>
 </template>

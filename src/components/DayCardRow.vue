@@ -20,7 +20,7 @@ const isHovered = ref(false)
 <template>
     <div @mouseover="isHovered = true" @mouseleave="isHovered = false" class="flex group relative font-indie  ">
         <!--dates bg-->
-        <div class="flex-2/5 bg-black flex items-center justify-center font-semibold py-1">
+        <div class="flex-2/5 bg-black flex items-center justify-center font-semibold py-1 ">
             <div
                 class="flex gap-2 text-sm items-center justify-center group-hover:-translate-x-3 transition-all duration-200">
                 {{ formatDate(activity.start_time) }} -
